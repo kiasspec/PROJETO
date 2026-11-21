@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CR7 · Homenagem a Cristiano Ronaldo</title>
+
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <!-- Ícones Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER / HERO
+       ============================================================ -->
+  <header>
+    <div class="container hero">
+
+      <!-- Texto do Hero -->
+      <div class="hero-texto">
+        <h1>CRISTIANO<br>RONALDO</h1>
+        <div class="subtitulo">
+          <i class="fas fa-crown"></i> O GOAT · CR7
+        </div>
+        <p>
+          Uma homenagem ao maior jogador de todos os tempos. Cinco Bolas de Ouro,
+          cinco Champions League, e uma carreira repleta de recordes e emoções.
+        </p>
+      </div>
+
+      <!-- ============================================================
+           👇👇👇 AQUI É ONDE VOCÊ COLOCA A FOTO DO CRISTIANO RONALDO 👇👇👇
+           ============================================================
+           Instruções:
+           1. Coloque o arquivo da foto na MESMA pasta do index.html
+           2. Substitua "cristiano.jpg" pelo nome exato do seu arquivo
+              (ex: "cr7.png", "foto-cr7.jpg", "ronaldo.webp"...)
+           3. Formatos recomendados: .jpg, .png ou .webp
+           4. Tamanho ideal: imagem quadrada (ex: 600x600px)
+           ============================================================ -->
+      <div class="hero-imagem">
+
+        <img
+          src="Perfil\download.jpg"
+          alt="Cristiano Ronaldo"
+          class="foto-jogador">
+
+      </div>
+      <!-- ============================================================
+           👆👆👆 FIM DA ÁREA DA FOTO DO CRISTIANO RONALDO 👆👆👆
+           ============================================================ -->
+
+    </div>
+  </header>
+
+  <!-- ============================================================
+       MAIN — ABAS
+       ============================================================ -->
+  <main class="container">
+
+    <!-- Botões das abas -->
+    <div class="tabs" id="tabs">
+      <button class="tab-btn ativo" data-aba="stats">
+        <i class="fas fa-chart-bar"></i> Estatísticas
+      </button>
+      <button class="tab-btn" data-aba="carreira">
+        <i class="fas fa-trophy"></i> Carreira
+      </button>
+      <button class="tab-btn" data-aba="conquistas">
+        <i class="fas fa-medal"></i> Conquistas
+      </button>
+      <button class="tab-btn" data-aba="frases">
+        <i class="fas fa-quote-right"></i> Frases
+      </button>
+    </div>
+
+    <!-- Conteúdo das abas -->
+    <div class="conteudo-abas">
+
+      <!-- ---------- ABA: ESTATÍSTICAS ---------- -->
+      <div class="aba-conteudo ativo" id="aba-stats">
+        <h2><i class="fas fa-futbol"></i> Números do Fenômeno</h2>
+
+        <div class="grid-stats">
+          <div class="card-stat">
+            <i class="fas fa-futbol"></i>
+            <div class="numero">900+</div>
+            <div class="rotulo">Gols oficiais</div>
+          </div>
+          <div class="card-stat">
+            <i class="fas fa-hand-holding-heart"></i>
+            <div class="numero">250+</div>
+            <div class="rotulo">Assistências</div>
+          </div>
+          <div class="card-stat">
+            <i class="fas fa-shirt"></i>
+            <div class="numero">1200+</div>
+            <div class="rotulo">Jogos</div>
+          </div>
+          <div class="card-stat">
+            <i class="fas fa-trophy"></i>
+            <div class="numero">34</div>
+            <div class="rotulo">Títulos coletivos</div>
+          </div>
+        </div>
+
+        <div class="citacao">
+          <i class="fas fa-chart-line"></i>
+          Recordes que parecem impossíveis, mas são reais. Gols em todas as
+          competições, em todos os clubes, por toda uma vida.
+        </div>
+      </div>
+
+      <!-- ---------- ABA: CARREIRA ---------- -->
+      <div class="aba-conteudo" id="aba-carreira">
+        <h2><i class="fas fa-road"></i> Linha do Tempo</h2>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-ano">2002</div>
+            <div class="timeline-desc">
+              <i class="fas fa-flag"></i> Estreia profissional no Sporting CP
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-ano">2003</div>
+            <div class="timeline-desc">
+              <i class="fas fa-flag"></i> Chega ao Manchester United, herda a camisa 7
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-ano">2009</div>
+            <div class="timeline-desc">
+              <i class="fas fa-flag"></i> Transferência recorde para o Real Madrid
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-ano">2018</div>
+            <div class="timeline-desc">
+              <i class="fas fa-flag"></i> Juventus: novo desafio na Itália
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-ano">2021</div>
+            <div class="timeline-desc">
+              <i class="fas fa-flag"></i> Retorno ao Manchester United
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-ano">2023</div>
+            <div class="timeline-desc">
+              <i class="fas fa-flag"></i> Al Nassr e a nova era na Arábia Saudita
+            </div>
+          </div>
+        </div>
+
+        <p class="frase-final">
+          <i class="fas fa-heart"></i> Uma carreira de superação, trabalho duro e genialidade.
+        </p>
+      </div>
+
+      <!-- ---------- ABA: CONQUISTAS ---------- -->
+      <div class="aba-conteudo" id="aba-conquistas">
+        <h2><i class="fas fa-medal"></i> Sala de Troféus</h2>
+
+        <div class="lista-conquistas">
+          <div class="conquista-item"><i class="fas fa-star"></i> 5x Ballon d'Or</div>
+          <div class="conquista-item"><i class="fas fa-star"></i> 5x Champions League</div>
+          <div class="conquista-item"><i class="fas fa-star"></i> Euro 2016</div>
+          <div class="conquista-item"><i class="fas fa-star"></i> Nations League 2019</div>
+          <div class="conquista-item"><i class="fas fa-star"></i> 3x Premier League</div>
+          <div class="conquista-item"><i class="fas fa-star"></i> 2x La Liga</div>
+          <div class="conquista-item"><i class="fas fa-star"></i> 2x Serie A</div>
+          <div class="conquista-item"><i class="fas fa-star"></i> Euro 2016 Chuteira de Ouro</div>
+          <div class="conquista-item"><i class="fas fa-star"></i> 4x Chuteira de Ouro Europeia</div>
+          <div class="conquista-item"><i class="fas fa-star"></i> 7x Artilheiro da Champions</div>
+        </div>
+
+        <div class="destaque-vermelho">
+          <i class="fas fa-crown"></i>
+          <p>O único a marcar em 5 Copas do Mundo diferentes</p>
+        </div>
+      </div>
+
+      <!-- ---------- ABA: FRASES ---------- -->
+      <div class="aba-conteudo" id="aba-frases">
+        <h2><i class="fas fa-quote-right"></i> Mentalidade Vencedora</h2>
+
+        <div class="citacao">
+          "O talento sem trabalho não é nada. Eu prefiro ser o melhor trabalhador
+          do que o mais talentoso."
+          <span class="citacao-autor">— Cristiano Ronaldo</span>
+        </div>
+
+        <div class="citacao">
+          "Não persigo recordes, os recordes é que me perseguem a mim."
+          <span class="citacao-autor">— Cristiano Ronaldo</span>
+        </div>
+
+        <div class="citacao">
+          "Se você quer ser o melhor, precisa trabalhar como o melhor.
+          Não há atalhos."
+          <span class="citacao-autor">— Cristiano Ronaldo</span>
+        </div>
+
+        <p class="frase-final">
+          <i class="fas fa-fist-raised"></i> Inspiração para milhões.
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ============================================================
+       RODAPÉ
+       ============================================================ -->
+  <footer>
+    <div class="container">
+      <p><i class="fas fa-heart"></i> Homenagem a Cristiano Ronaldo <i class="fas fa-heart"></i></p>
+      <p class="footer-sub">Feito com admiração · 2025 · O melhor de todos os tempos</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript externo -->
+  <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,780 @@
+/* ============================================================
+   HOMENAGEM CRISTIANO RONALDO — style.css (MODERNO)
+   ============================================================ */
+
+/* ---------- RESET ---------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---------- VARIÁVEIS MODERNAS ---------- */
+:root {
+  /* Paleta principal */
+  --emerald-deep: #ff0000;
+  --emerald: #ff0000;
+  --emerald-light: #ff0000;
+  --gold: #ffffff;
+  --gold-light: #ffffff;
+  --red: #ef4444;
+  --red-deep: #b91c1c;
+  --cyan: #ffffff;
+  --white: #ff0000;
+
+  /* Neutros */
+  --bg-900: #000000;
+  --bg-800: #000000;
+  --bg-700: #000000;
+  --text-muted: #ffffff;
+
+  /* Efeitos */
+  --glass-bg: rgba(255, 255, 255, 0.06);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.5);
+
+  /* Gradientes */
+  --grad-gold: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #fde68a 100%);
+  --grad-emerald: linear-gradient(135deg, #0f9d58 0%, #34d399 100%);
+  --grad-red: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
+  --grad-header: radial-gradient(ellipse at 30% 20%, #0f9d58 0%, #052e1f 55%, #030a07 100%);
+
+  /* Tipografia */
+  --font-base: 'Montserrat', system-ui, -apple-system, sans-serif;
+
+  /* Transições */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ---------- BASE ---------- */
+body {
+  font-family: var(--font-base);
+  background: var(--bg-900);
+  color: var(--white);
+  line-height: 1.65;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Fundo animado suave (aurora) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 15% 25%, rgba(15, 157, 88, 0.15), transparent 45%),
+    radial-gradient(circle at 85% 75%, rgba(251, 191, 36, 0.10), transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(34, 211, 238, 0.06), transparent 60%);
+  pointer-events: none;
+  z-index: -1;
+  animation: auroraShift 18s ease-in-out infinite alternate;
+}
+
+@keyframes auroraShift {
+  0%   { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-3%, 3%) scale(1.05); }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ============================================================
+   HEADER / HERO
+   ============================================================ */
+header {
+  position: relative;
+  padding: 60px 0 80px;
+  background: var(--grad-header);
+  border-bottom: 1px solid rgba(251, 191, 36, 0.25);
+  overflow: hidden;
+}
+
+/* Linha de brilho no topo */
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0.8;
+}
+
+/* Bola de futebol decorativa ao fundo */
+header::after {
+  content: "⚽";
+  position: absolute;
+  font-size: 320px;
+  right: -40px;
+  bottom: -100px;
+  opacity: 0.05;
+  transform: rotate(15deg);
+  pointer-events: none;
+  filter: blur(2px);
+}
+
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- Texto do Hero ---------- */
+.hero-texto {
+  flex: 1 1 320px;
+}
+
+.hero-texto h1 {
+  font-size: clamp(2.6rem, 7.5vw, 4.8rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  line-height: 1.02;
+  color: var(--white);
+  margin-bottom: 20px;
+  text-shadow:
+    0 2px 0 rgb(255, 0, 0),
+    0 10px 30px rgb(255, 0, 0);
+}
+
+/* Destaque dourado sutil só na palavra "RONALDO" (se quiser aplicar
+   essa classe em um <span>, mas por padrão fica branco) */
+.hero-texto h1 .destaque {
+  background: var(--grad-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-texto .subtitulo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  background: rgba(251, 191, 36, 0.10);
+  border: 1px solid rgba(251, 191, 36, 0.35);
+  padding: 10px 22px;
+  border-radius: 999px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  margin-bottom: 26px;
+  box-shadow: 0 0 20px rgba(251, 191, 36, 0.15);
+}
+
+.hero-texto .subtitulo i {
+  color: var(--gold);
+}
+
+.hero-texto p {
+  font-size: 1.1rem;
+  max-width: 540px;
+  color: #cbd5e1;
+  margin-bottom: 28px;
+  font-weight: 400;
+}
+
+/* ---------- Imagem do Hero ---------- */
+.hero-imagem {
+  flex: 1 1 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Anel de brilho atrás da foto */
+.hero-imagem::before {
+  content: "";
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    var(--emerald-light),
+    var(--gold),
+    var(--red),
+    var(--cyan),
+    var(--emerald-light)
+  );
+  filter: blur(40px);
+  opacity: 0.35;
+  animation: rotateGlow 12s linear infinite;
+  z-index: 0;
+}
+
+@keyframes rotateGlow {
+  to { transform: rotate(360deg); }
+}
+
+/* ============================================================
+   FOTO DO CRISTIANO RONALDO
+   ============================================================ */
+.foto-jogador {
+  position: relative;
+  z-index: 1;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  background: var(--bg-700);
+  border: 4px solid var(--gold);
+  box-shadow:
+    0 0 0 6px rgba(251, 191, 36, 0.15),
+    0 0 0 12px rgba(251, 191, 36, 0.06),
+    0 20px 40px rgba(0, 0, 0, 0.6),
+    0 0 60px rgba(251, 191, 36, 0.25);
+  animation: floatY 6s ease-in-out infinite;
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+  display: block;
+}
+
+.foto-jogador:hover {
+  transform: scale(1.04) rotate(-1deg);
+  box-shadow:
+    0 0 0 6px rgba(251, 191, 36, 0.3),
+    0 0 0 12px rgba(251, 191, 36, 0.1),
+    0 24px 50px rgba(0, 0, 0, 0.7),
+    0 0 80px rgba(251, 191, 36, 0.4);
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+
+/* ============================================================
+   ABAS / TABS
+   ============================================================ */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 50px 0 32px;
+  padding: 8px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 999px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: var(--shadow-md);
+}
+
+.tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #cbd5e1;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.25s var(--ease);
+  white-space: nowrap;
+}
+
+.tab-btn i {
+  font-size: 1rem;
+  color: var(--gold);
+  transition: color 0.25s var(--ease), transform 0.25s var(--ease);
+}
+
+.tab-btn:hover {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(251, 191, 36, 0.4);
+}
+
+.tab-btn:hover i {
+  transform: scale(1.15);
+}
+
+.tab-btn.ativo {
+  color: var(--bg-900);
+  background: var(--grad-gold);
+  border-color: transparent;
+  box-shadow:
+    0 6px 20px rgba(251, 191, 36, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.tab-btn.ativo i {
+  color: var(--bg-900);
+}
+
+/* ============================================================
+   CONTEÚDO DAS ABAS
+   ============================================================ */
+.conteudo-abas {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 28px;
+  padding: 36px 32px 44px;
+  margin: 0 0 60px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: var(--shadow-lg);
+  min-height: 350px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Linha decorativa no topo do card */
+.conteudo-abas::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0.6;
+}
+
+.aba-conteudo {
+  display: none;
+  animation: fadeSlide 0.45s var(--ease);
+}
+
+.aba-conteudo.ativo {
+  display: block;
+}
+
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.aba-conteudo h2 {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--white);
+  margin-bottom: 28px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+}
+
+.aba-conteudo h2::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 80px;
+  height: 2px;
+  background: var(--grad-gold);
+  border-radius: 2px;
+}
+
+.aba-conteudo h2 i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  font-size: 1.3rem;
+  color: var(--bg-900);
+  background: var(--grad-gold);
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(251, 191, 36, 0.3);
+}
+
+/* ---------- Grid de estatísticas ---------- */
+.grid-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 18px;
+  margin: 8px 0 28px;
+}
+
+.card-stat {
+  position: relative;
+  padding: 28px 20px;
+  text-align: center;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
+  border: 1px solid var(--glass-border);
+  border-radius: 22px;
+  overflow: hidden;
+  transition: transform 0.3s var(--ease), border-color 0.3s var(--ease);
+  animation: fadeSlide 0.6s var(--ease) backwards;
+}
+
+.card-stat:nth-child(1) { animation-delay: 0.05s; }
+.card-stat:nth-child(2) { animation-delay: 0.12s; }
+.card-stat:nth-child(3) { animation-delay: 0.19s; }
+.card-stat:nth-child(4) { animation-delay: 0.26s; }
+
+.card-stat::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(251, 191, 36, 0.15), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s var(--ease);
+}
+
+.card-stat:hover {
+  transform: translateY(-6px);
+  border-color: rgba(251, 191, 36, 0.5);
+}
+
+.card-stat:hover::before {
+  opacity: 1;
+}
+
+.card-stat i {
+  display: inline-block;
+  font-size: 1.5rem;
+  color: var(--gold);
+  margin-bottom: 14px;
+  filter: drop-shadow(0 0 12px rgba(251, 191, 36, 0.4));
+  position: relative;
+  z-index: 1;
+}
+
+.card-stat .numero {
+  font-size: clamp(2.4rem, 5vw, 3.2rem);
+  font-weight: 900;
+  line-height: 1;
+  background: var(--grad-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.card-stat .rotulo {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-muted);
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- Citações ---------- */
+.citacao {
+  position: relative;
+  padding: 32px 40px;
+  margin: 24px 0;
+  background: linear-gradient(160deg, rgba(15, 157, 88, 0.10), rgba(34, 211, 238, 0.04));
+  border: 1px solid rgba(52, 211, 153, 0.25);
+  border-left: 3px solid var(--emerald-light);
+  border-radius: 20px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-style: italic;
+  text-align: center;
+  color: #e2e8f0;
+  line-height: 1.7;
+  box-shadow: inset 0 0 30px rgba(15, 157, 88, 0.05);
+}
+
+.citacao::before {
+  content: "“";
+  position: absolute;
+  top: -8px;
+  left: 18px;
+  font-size: 4rem;
+  line-height: 1;
+  font-family: Georgia, serif;
+  color: var(--emerald-light);
+  opacity: 0.6;
+}
+
+.citacao-autor {
+  display: block;
+  margin-top: 16px;
+  font-size: 0.9rem;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* ---------- Linha do tempo ---------- */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 8px 0 24px;
+  position: relative;
+}
+
+.timeline-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 22px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  transition: all 0.25s var(--ease);
+  position: relative;
+}
+
+.timeline-item:hover {
+  background: rgba(251, 191, 36, 0.06);
+  border-color: rgba(251, 191, 36, 0.4);
+  transform: translateX(6px);
+}
+
+.timeline-ano {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 90px;
+  padding: 8px 16px;
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: var(--bg-900);
+  background: var(--grad-gold);
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(251, 191, 36, 0.3);
+  letter-spacing: 1px;
+}
+
+.timeline-desc {
+  flex: 1;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #cbd5e1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.timeline-desc i {
+  color: var(--emerald-light);
+  font-size: 0.9rem;
+}
+
+/* ---------- Lista de conquistas ---------- */
+.lista-conquistas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.conquista-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--glass-border);
+  border-radius: 14px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  transition: all 0.25s var(--ease);
+}
+
+.conquista-item:hover {
+  background: rgba(251, 191, 36, 0.08);
+  border-color: rgba(251, 191, 36, 0.45);
+  transform: translateY(-3px);
+}
+
+.conquista-item i {
+  color: var(--gold);
+  font-size: 1.1rem;
+  filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.5));
+}
+
+/* ---------- Destaque vermelho ---------- */
+.destaque-vermelho {
+  margin-top: 28px;
+  padding: 24px 28px;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.12), rgba(185, 28, 28, 0.06));
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  border-radius: 20px;
+  box-shadow: inset 0 0 40px rgba(239, 68, 68, 0.06);
+}
+
+.destaque-vermelho i {
+  display: inline-block;
+  font-size: 1.8rem;
+  color: var(--gold);
+  margin-bottom: 10px;
+  filter: drop-shadow(0 0 14px rgba(251, 191, 36, 0.5));
+}
+
+.destaque-vermelho p {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.5px;
+}
+
+/* ---------- Frase final ---------- */
+.frase-final {
+  margin-top: 28px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--gold-light);
+  letter-spacing: 1px;
+}
+
+.frase-final i {
+  color: var(--red);
+  margin-right: 8px;
+  animation: heartBeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartBeat {
+  0%, 100% { transform: scale(1); }
+  25%      { transform: scale(1.15); }
+  50%      { transform: scale(1); }
+}
+
+/* ============================================================
+   RODAPÉ
+   ============================================================ */
+footer {
+  padding: 36px 0 40px;
+  text-align: center;
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.5));
+  border-top: 1px solid rgba(251, 191, 36, 0.2);
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+footer p:first-child {
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.5px;
+}
+
+footer i {
+  color: var(--red);
+  margin: 0 4px;
+}
+
+.footer-sub {
+  margin-top: 8px;
+  font-size: 0.82rem;
+  color: #64748b;
+  letter-spacing: 1px;
+}
+
+/* ============================================================
+   RESPONSIVIDADE
+   ============================================================ */
+@media (max-width: 768px) {
+  header {
+    padding: 44px 0 60px;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    gap: 32px;
+  }
+
+  .hero-texto p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-imagem::before {
+    width: 260px;
+    height: 260px;
+  }
+
+  .foto-jogador {
+    width: 220px;
+    height: 220px;
+  }
+
+  .tabs {
+    border-radius: 20px;
+    padding: 6px;
+    gap: 6px;
+  }
+
+  .tab-btn {
+    padding: 10px 16px;
+    font-size: 0.85rem;
+  }
+
+  .tab-btn span {
+    display: none; /* esconde o texto em telas muito pequenas, se quiser */
+  }
+
+  .conteudo-abas {
+    padding: 24px 18px 32px;
+    border-radius: 22px;
+  }
+
+  .citacao {
+    padding: 26px 22px;
+    font-size: 1rem;
+  }
+
+  .timeline-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .timeline-ano {
+    min-width: 80px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-texto h1 {
+    letter-spacing: 2px;
+  }
+
+  .tab-btn i {
+    font-size: 1.1rem;
+  }
+
+  .tab-btn {
+    padding: 10px 12px;
+  }
+}
